@@ -428,11 +428,11 @@
 <p>Static IP: 192.168.0.15 /24</p>
 <p>domain: my.domain</p>
 <p>server: server</p>
-<p>Features:
- ADDS (Domain contorller)
-  User account: test.user
- DHCP
- DNS  </p>
+<p>User account: test.user</p>
+<p>Features (Roles):</p>
+<p>ADDS (Domain contorller)</p>
+<p>DHCP</p>
+<p>DNS  </p>
 <hr />
 <h3 id="ubuntu-client-ver-1804-1810-194">Ubuntu client: (ver 18.04 / 18.10 / 19.4)</h3>
 <p><em>Open terminal, Install Required Packages.</em></p>
@@ -441,7 +441,7 @@
 <pre><code>sudo apt update
 
 sudo apt-get -y install realmd sssd sssd-tools samba-common krb5-user 
-packagekit samba-common-bin samba-libs adcli ntp
+packagekit samba-common-bin samba-libs adcli ntp.
 
 Kerberos Authentication:
 MY.DOMAIN
@@ -565,7 +565,7 @@ session required pam_mkhomedir.so skel=/etc/skel/ umask=0077
     </div>
     
       <script src="../assets/javascripts/vendor.c51dfa35.min.js"></script>
-      <script src="../assets/javascripts/bundle.eaaa3931.min.js"></script><script id="__lang" type="application/json">{"search.config.separator": "[\\s\\-]+", "search.result.other": "# matching documents", "search.config.pipeline": "trimmer, stopWordFilter", "clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.config.lang": "en"}</script>
+      <script src="../assets/javascripts/bundle.eaaa3931.min.js"></script><script id="__lang" type="application/json">{"search.result.none": "No matching documents", "clipboard.copied": "Copied to clipboard", "search.result.placeholder": "Type to start searching", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.config.separator": "[\\s\\-]+", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.lang": "en", "clipboard.copy": "Copy to clipboard"}</script>
       
       <script>
         app = initialize({
