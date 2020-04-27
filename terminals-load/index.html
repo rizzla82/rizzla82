@@ -448,6 +448,17 @@
 </div>
 <h2 id="load-multiple-terminals">Load multiple Terminals<a class="headerlink" href="#load-multiple-terminals" title="Permanent link">Link</a></h2>
 <hr />
+<p>Enable Tabs support for your terminal.</p>
+<p>Each application or service you want to load must be already installed.</p>
+<div class="codehilite"><pre><span></span><code> sudo -i
+
+ apt install htop
+ apt install sensors
+ apt install iftop
+</code></pre></div>
+
+
+<p>Docker you will installed separately or another service you want to monitor.</p>
 <p>Create script using a text editor and once saved make as script.</p>
 <h3 id="save-as-apps_loadsh">Save as apps_load.sh<a class="headerlink" href="#save-as-apps_loadsh" title="Permanent link">Link</a></h3>
 <div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/sh</span>
@@ -459,6 +470,7 @@ gnome-terminal --app-id us.kirkland.terminals.byobu -e byobu <span class="se">\<
 </code></pre></div>
 
 
+<p>The sudo command will require you to enter the password, click tab. </p>
 <h3 id="make-the-saved-file-executable">Make the saved file executable.<a class="headerlink" href="#make-the-saved-file-executable" title="Permanent link">Link</a></h3>
 <div class="codehilite"><pre><span></span><code><span class="n">chmod</span> <span class="n">u</span><span class="o">+</span><span class="n">x</span> <span class="n">apps_load</span><span class="p">.</span><span class="n">sh</span>
 </code></pre></div>
@@ -522,7 +534,7 @@ gnome-terminal --app-id us.kirkland.terminals.byobu -e byobu <span class="se">\<
     </div>
     
       <script src="../assets/javascripts/vendor.c51dfa35.min.js"></script>
-      <script src="../assets/javascripts/bundle.eaaa3931.min.js"></script><script id="__lang" type="application/json">{"search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.result.one": "1 matching document", "search.result.none": "No matching documents", "search.result.other": "# matching documents", "clipboard.copied": "Copied to clipboard", "search.config.separator": "[\\s\\-]+", "clipboard.copy": "Copy to clipboard", "search.result.placeholder": "Type to start searching"}</script>
+      <script src="../assets/javascripts/bundle.eaaa3931.min.js"></script><script id="__lang" type="application/json">{"search.result.other": "# matching documents", "search.result.none": "No matching documents", "clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.result.one": "1 matching document", "search.result.placeholder": "Type to start searching", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+"}</script>
       
       <script>
         app = initialize({
