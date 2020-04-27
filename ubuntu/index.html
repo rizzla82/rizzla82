@@ -269,6 +269,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#reboot-and-login-as-new-user" class="md-nav__link">
+    Reboot and login as new user.
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -413,6 +420,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#reboot-and-login-as-new-user" class="md-nav__link">
+    Reboot and login as new user.
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -442,56 +456,70 @@
 <p>Most commands will require sudo acess, sudo -i before continuing.</p>
 <h3 id="add-new-account">Add New Account.</h3>
 <p>New account if don't to want use the one setup during installation of the operating system.</p>
-<pre><code>
- adduser mjones
+<div class="codehilite"><pre><span></span><code> adduser mjones
 
  usermod -a -G sudo mjones
-</code></pre>
+</code></pre></div>
+
 
 <h3 id="timezone-and-ntp">TimeZone and NTP</h3>
 <p>This will insure correct timezone for the system.</p>
-<pre><code> dpkg-reconfigure tzdata
+<div class="codehilite"><pre><span></span><code> dpkg-reconfigure tzdata
 
  apt install ntp
 
  service ntp status
 
  date
-</code></pre>
+</code></pre></div>
+
 
 <h3 id="server-update">Server Update</h3>
-<pre><code> apt update -y
+<p>Only run individual or both together.</p>
+<div class="codehilite"><pre><span></span><code> apt update -y
 
  apt upgrade -y
 
  or
 
- apt update &amp;&amp; apt upgrade -y
-</code></pre>
+ apt update <span class="o">&amp;&amp;</span> apt upgrade -y
+</code></pre></div>
+
 
 <h3 id="setup-autoremove">Setup Autoremove</h3>
-<pre><code> apt autoremove -y
+<p>This setup monthly clean up of the system.</p>
+<div class="codehilite"><pre><span></span><code> apt autoremove -y
 
- sh -c 'echo &quot; apt autoremove -y&quot; &gt;&gt; /etc/cron.monthly/autoremove'
+ sh -c <span class="s1">&#39;echo &quot; apt autoremove -y&quot; &gt;&gt; /etc/cron.monthly/autoremove&#39;</span>
 
  chmod +x /etc/cron.monthly/autoremove
-</code></pre>
+</code></pre></div>
+
 
 <h3 id="upgrade-distribution">Upgrade distribution</h3>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 </div>
 <p>This should only be run if you want to upgrade from the current release to the next.</p>
-<pre><code> apt dist-upgrade
-</code></pre>
+<div class="codehilite"><pre><span></span><code> apt dist-upgrade
+</code></pre></div>
+
 
 <h3 id="create-private-key-pair">Create Private Key Pair</h3>
-<pre><code> ssh-keygen
+<p>Only create key if you have installed ssh-server or want to access another system remotley.</p>
+<div class="codehilite"><pre><span></span><code> ssh-keygen
 
- ssh-copy-id mjones@[server IP]
-</code></pre>
+ ssh-copy-id mjones@<span class="o">[</span>server IP<span class="o">]</span>
+</code></pre></div>
 
-<p>Reboot and login as new user.</p>
+
+<h3 id="reboot-and-login-as-new-user">Reboot and login as new user.</h3>
+<div class="codehilite"><pre><span></span><code> sudo -i
+
+or 
+
+ su
+</code></pre></div>
                 
                   
                 
@@ -561,7 +589,7 @@
     </div>
     
       <script src="../assets/javascripts/vendor.c51dfa35.min.js"></script>
-      <script src="../assets/javascripts/bundle.eaaa3931.min.js"></script><script id="__lang" type="application/json">{"search.result.one": "1 matching document", "search.config.lang": "en", "search.result.placeholder": "Type to start searching", "clipboard.copied": "Copied to clipboard", "search.result.other": "# matching documents", "search.config.separator": "[\\s\\-]+", "search.result.none": "No matching documents", "search.config.pipeline": "trimmer, stopWordFilter", "clipboard.copy": "Copy to clipboard"}</script>
+      <script src="../assets/javascripts/bundle.eaaa3931.min.js"></script><script id="__lang" type="application/json">{"search.config.lang": "en", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "clipboard.copy": "Copy to clipboard", "search.result.one": "1 matching document", "clipboard.copied": "Copied to clipboard", "search.result.none": "No matching documents", "search.config.separator": "[\\s\\-]+", "search.config.pipeline": "trimmer, stopWordFilter"}</script>
       
       <script>
         app = initialize({

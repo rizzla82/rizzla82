@@ -438,16 +438,17 @@
 <p><em>Open terminal, Install Required Packages.</em></p>
 <p>During the installation fill in your AD Domain information.</p>
 <p><strong><em>Most be in captial or this will fail.</em></strong></p>
-<pre><code>sudo apt update
+<div class="codehilite"><pre><span></span><code><span class="n">sudo</span> <span class="n">apt</span> <span class="k">update</span>
 
-sudo apt-get -y install realmd sssd sssd-tools samba-common krb5-user 
-packagekit samba-common-bin samba-libs adcli ntp.
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="k">get</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">realmd</span> <span class="n">sssd</span> <span class="n">sssd</span><span class="o">-</span><span class="n">tools</span> <span class="n">samba</span><span class="o">-</span><span class="n">common</span> <span class="n">krb5</span><span class="o">-</span><span class="k">user</span> 
+<span class="n">packagekit</span> <span class="n">samba</span><span class="o">-</span><span class="n">common</span><span class="o">-</span><span class="n">bin</span> <span class="n">samba</span><span class="o">-</span><span class="n">libs</span> <span class="n">adcli</span> <span class="n">ntp</span><span class="p">.</span>
 
-Kerberos Authentication:
-MY.DOMAIN
-SERVER.MY.DOMAIN
-SERVER.MY.DOMAIN
-</code></pre>
+<span class="n">Kerberos</span> <span class="n">Authentication</span><span class="p">:</span>
+<span class="n">MY</span><span class="p">.</span><span class="k">DOMAIN</span>
+<span class="n">SERVER</span><span class="p">.</span><span class="n">MY</span><span class="p">.</span><span class="k">DOMAIN</span>
+<span class="n">SERVER</span><span class="p">.</span><span class="n">MY</span><span class="p">.</span><span class="k">DOMAIN</span>
+</code></pre></div>
+
 
 <p>Change adapter to enter virtual environment (No internet access from here).</p>
 <hr />
@@ -455,37 +456,39 @@ SERVER.MY.DOMAIN
 <p>sudo realm join my.domain -U 'Administrator@MY.DOMAIN' -v</p>
 <p>Setting up realmd: (To discover and join windows domain)</p>
 <p>sudo nano /etc/realmd.conf</p>
-<pre><code>[users]
-default-home = /home/%D/%U
-default-shell = /bin/bash
-[active-directory]
-default-client = sssd
-os-name = Ubuntu Desktop Linux
-os-version = 18.10
-[service]
-automatic-install = no
-[my.domain]
-fully-qualified-names = no
-automatic-id-mapping = yes
-user-principal = yes
-manage-system = no
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="k">[users]</span>
+<span class="na">default-home</span> <span class="o">=</span> <span class="s">/home/%D/%U</span>
+<span class="na">default-shell</span> <span class="o">=</span> <span class="s">/bin/bash</span>
+<span class="k">[active-directory]</span>
+<span class="na">default-client</span> <span class="o">=</span> <span class="s">sssd</span>
+<span class="na">os-name</span> <span class="o">=</span> <span class="s">Ubuntu Desktop Linux</span>
+<span class="na">os-version</span> <span class="o">=</span> <span class="s">18.10</span>
+<span class="k">[service]</span>
+<span class="na">automatic-install</span> <span class="o">=</span> <span class="s">no</span>
+<span class="k">[my.domain]</span>
+<span class="na">fully-qualified-names</span> <span class="o">=</span> <span class="s">no</span>
+<span class="na">automatic-id-mapping</span> <span class="o">=</span> <span class="s">yes</span>
+<span class="na">user-principal</span> <span class="o">=</span> <span class="s">yes</span>
+<span class="na">manage-system</span> <span class="o">=</span> <span class="s">no</span>
+</code></pre></div>
+
 
 <hr />
 <h3 id="join-the-ubuntu-machine-on-the-ad-domain-kerberos">Join the Ubuntu machine on the AD domain: (Kerberos)</h3>
-<pre><code>sudo kinit Administrator@MY.DOMAIN
- Password for Administrator@MY.DOMAIN:
+<div class="codehilite"><pre><span></span><code><span class="nv">sudo</span> <span class="nv">kinit</span> <span class="nv">Administrator</span>@<span class="nv">MY</span>.<span class="nv">DOMAIN</span>
+ <span class="nv">Password</span> <span class="k">for</span> <span class="nv">Administrator</span>@<span class="nv">MY</span>.<span class="nv">DOMAIN</span>:
 
-Setup homedir auto-creation for new users:
-sudo vi /etc/pam.d/common-session
+<span class="nv">Setup</span> <span class="nv">homedir</span> <span class="nv">auto</span><span class="o">-</span><span class="nv">creation</span> <span class="k">for</span> <span class="nv">new</span> <span class="nv">users</span>:
+<span class="nv">sudo</span> <span class="nv">vi</span> <span class="o">/</span><span class="nv">etc</span><span class="o">/</span><span class="nv">pam</span>.<span class="nv">d</span><span class="o">/</span><span class="nv">common</span><span class="o">-</span><span class="nv">session</span>
 ...
-session required pam_unix.so
-session optional pam_winbind.so
-session optional pam_sss.so
-session optional pam_systemd.so
-session required pam_mkhomedir.so skel=/etc/skel/ umask=0077
+<span class="nv">session</span> <span class="nv">required</span> <span class="nv">pam_unix</span>.<span class="nv">so</span>
+<span class="nv">session</span> <span class="nv">optional</span> <span class="nv">pam_winbind</span>.<span class="nv">so</span>
+<span class="nv">session</span> <span class="nv">optional</span> <span class="nv">pam_sss</span>.<span class="nv">so</span>
+<span class="nv">session</span> <span class="nv">optional</span> <span class="nv">pam_systemd</span>.<span class="nv">so</span>
+<span class="nv">session</span> <span class="nv">required</span> <span class="nv">pam_mkhomedir</span>.<span class="nv">so</span> <span class="nv">skel</span><span class="o">=/</span><span class="nv">etc</span><span class="o">/</span><span class="nv">skel</span><span class="o">/</span> <span class="nv">umask</span><span class="o">=</span><span class="mi">0077</span>
 ...
-</code></pre>
+</code></pre></div>
+
 
 <hr />
 <h3 id="final-check">Final Check:</h3>
@@ -565,7 +568,7 @@ session required pam_mkhomedir.so skel=/etc/skel/ umask=0077
     </div>
     
       <script src="../assets/javascripts/vendor.c51dfa35.min.js"></script>
-      <script src="../assets/javascripts/bundle.eaaa3931.min.js"></script><script id="__lang" type="application/json">{"search.result.one": "1 matching document", "search.config.lang": "en", "search.result.placeholder": "Type to start searching", "clipboard.copied": "Copied to clipboard", "search.result.other": "# matching documents", "search.config.separator": "[\\s\\-]+", "search.result.none": "No matching documents", "search.config.pipeline": "trimmer, stopWordFilter", "clipboard.copy": "Copy to clipboard"}</script>
+      <script src="../assets/javascripts/bundle.eaaa3931.min.js"></script><script id="__lang" type="application/json">{"search.config.lang": "en", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "clipboard.copy": "Copy to clipboard", "search.result.one": "1 matching document", "clipboard.copied": "Copied to clipboard", "search.result.none": "No matching documents", "search.config.separator": "[\\s\\-]+", "search.config.pipeline": "trimmer, stopWordFilter"}</script>
       
       <script>
         app = initialize({
