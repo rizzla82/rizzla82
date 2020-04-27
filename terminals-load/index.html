@@ -320,12 +320,32 @@
     Load multiple Terminals
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#script" class="md-nav__link">
-    Script
+    <nav class="md-nav" aria-label="Load multiple Terminals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#save-as-apps_loadsh" class="md-nav__link">
+    Save as apps_load.sh
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-the-saved-file-executable" class="md-nav__link">
+    Make the saved file executable.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-from-terminal-or-double-and-run-in-terminal" class="md-nav__link">
+    Run from terminal or double and run in terminal
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -369,12 +389,32 @@
     Load multiple Terminals
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#script" class="md-nav__link">
-    Script
+    <nav class="md-nav" aria-label="Load multiple Terminals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#save-as-apps_loadsh" class="md-nav__link">
+    Save as apps_load.sh
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-the-saved-file-executable" class="md-nav__link">
+    Make the saved file executable.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-from-terminal-or-double-and-run-in-terminal" class="md-nav__link">
+    Run from terminal or double and run in terminal
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -398,18 +438,18 @@
                 
                 <div class="toc">
 <ul>
-<li><a href="#load-multiple-terminals">Load multiple Terminals</a></li>
-<li><a href="#script">Script</a></li>
+<li><a href="#load-multiple-terminals">Load multiple Terminals</a><ul>
+<li><a href="#save-as-apps_loadsh">Save as apps_load.sh</a></li>
+<li><a href="#make-the-saved-file-executable">Make the saved file executable.</a></li>
+<li><a href="#run-from-terminal-or-double-and-run-in-terminal">Run from terminal or double and run in terminal</a></li>
+</ul>
+</li>
 </ul>
 </div>
 <h2 id="load-multiple-terminals">Load multiple Terminals<a class="headerlink" href="#load-multiple-terminals" title="Permanent link">Link</a></h2>
+<hr />
 <p>Create script using a text editor and once saved make as script.</p>
-<p>apps_load.sh</p>
-<div class="codehilite"><pre><span></span><code><span class="n">chmod</span> <span class="n">u</span><span class="o">+</span><span class="n">x</span> <span class="n">apps_load</span><span class="p">.</span><span class="n">sh</span>
-</code></pre></div>
-
-
-<h2 id="script">Script<a class="headerlink" href="#script" title="Permanent link">Link</a></h2>
+<h3 id="save-as-apps_loadsh">Save as apps_load.sh<a class="headerlink" href="#save-as-apps_loadsh" title="Permanent link">Link</a></h3>
 <div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/sh</span>
 gnome-terminal --app-id us.kirkland.terminals.byobu -e byobu <span class="se">\</span>
 --tab -e <span class="s2">&quot;htop&quot;</span> <span class="se">\</span>
@@ -419,7 +459,12 @@ gnome-terminal --app-id us.kirkland.terminals.byobu -e byobu <span class="se">\<
 </code></pre></div>
 
 
-<p>Run from terminal or double and run in terminal</p>
+<h3 id="make-the-saved-file-executable">Make the saved file executable.<a class="headerlink" href="#make-the-saved-file-executable" title="Permanent link">Link</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="n">chmod</span> <span class="n">u</span><span class="o">+</span><span class="n">x</span> <span class="n">apps_load</span><span class="p">.</span><span class="n">sh</span>
+</code></pre></div>
+
+
+<h3 id="run-from-terminal-or-double-and-run-in-terminal">Run from terminal or double and run in terminal<a class="headerlink" href="#run-from-terminal-or-double-and-run-in-terminal" title="Permanent link">Link</a></h3>
 <div class="codehilite"><pre><span></span><code>./apps_load.sh
 </code></pre></div>
                 
@@ -477,7 +522,7 @@ gnome-terminal --app-id us.kirkland.terminals.byobu -e byobu <span class="se">\<
     </div>
     
       <script src="../assets/javascripts/vendor.c51dfa35.min.js"></script>
-      <script src="../assets/javascripts/bundle.eaaa3931.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "search.config.separator": "[\\s\\-]+", "search.result.one": "1 matching document", "search.result.none": "No matching documents", "search.config.pipeline": "trimmer, stopWordFilter", "search.result.other": "# matching documents", "search.config.lang": "en", "search.result.placeholder": "Type to start searching", "clipboard.copied": "Copied to clipboard"}</script>
+      <script src="../assets/javascripts/bundle.eaaa3931.min.js"></script><script id="__lang" type="application/json">{"search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.result.one": "1 matching document", "search.result.none": "No matching documents", "search.result.other": "# matching documents", "clipboard.copied": "Copied to clipboard", "search.config.separator": "[\\s\\-]+", "clipboard.copy": "Copy to clipboard", "search.result.placeholder": "Type to start searching"}</script>
       
       <script>
         app = initialize({
