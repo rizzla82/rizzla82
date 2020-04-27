@@ -460,9 +460,11 @@
 </code></pre>
 
 <h3 id="server-update">Server Update</h3>
-<pre><code> apt update
+<pre><code> apt update -y
 
  apt upgrade -y
+
+ or
 
  apt update &amp;&amp; apt upgrade -y
 </code></pre>
@@ -476,8 +478,11 @@
 </code></pre>
 
 <h3 id="upgrade-distribution">Upgrade distribution</h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+</div>
 <p>This should only be run if you want to upgrade from the current release to the next.</p>
-<pre><code> apt dist-upgrade -y
+<pre><code> apt dist-upgrade
 </code></pre>
 
 <h3 id="create-private-key-pair">Create Private Key Pair</h3>
@@ -556,7 +561,7 @@
     </div>
     
       <script src="../assets/javascripts/vendor.c51dfa35.min.js"></script>
-      <script src="../assets/javascripts/bundle.eaaa3931.min.js"></script><script id="__lang" type="application/json">{"clipboard.copied": "Copied to clipboard", "search.result.one": "1 matching document", "search.config.pipeline": "trimmer, stopWordFilter", "search.result.none": "No matching documents", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.separator": "[\\s\\-]+", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching"}</script>
+      <script src="../assets/javascripts/bundle.eaaa3931.min.js"></script><script id="__lang" type="application/json">{"search.result.one": "1 matching document", "search.config.lang": "en", "search.result.placeholder": "Type to start searching", "clipboard.copied": "Copied to clipboard", "search.result.other": "# matching documents", "search.config.separator": "[\\s\\-]+", "search.result.none": "No matching documents", "search.config.pipeline": "trimmer, stopWordFilter", "clipboard.copy": "Copy to clipboard"}</script>
       
       <script>
         app = initialize({
