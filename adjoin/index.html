@@ -422,9 +422,21 @@
                 
                   <h1>AD Join</h1>
                 
-                <h2 id="active-directory-join-ubuntu-desktop">Active Directory Join - Ubuntu Desktop</h2>
+                <div class="toc">
+<ul>
+<li><a href="#active-directory-join-ubuntu-desktop">Active Directory Join - Ubuntu Desktop</a><ul>
+<li><a href="#windows-server-domain-controller">Windows Server Domain Controller</a></li>
+<li><a href="#ubuntu-client-ver-1804-1810-194">Ubuntu client: (ver 18.04 / 18.10 / 19.4)</a></li>
+<li><a href="#realmd-configuration">Realmd configuration</a></li>
+<li><a href="#join-the-ubuntu-machine-on-the-ad-domain-kerberos">Join the Ubuntu machine on the AD domain: (Kerberos)</a></li>
+<li><a href="#final-check">Final Check:</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="active-directory-join-ubuntu-desktop">Active Directory Join - Ubuntu Desktop<a class="headerlink" href="#active-directory-join-ubuntu-desktop" title="Permanent link">Link</a></h2>
 <hr />
-<h3 id="windows-server-domain-controller">Windows Server Domain Controller</h3>
+<h3 id="windows-server-domain-controller">Windows Server Domain Controller<a class="headerlink" href="#windows-server-domain-controller" title="Permanent link">Link</a></h3>
 <p>Static IP: 192.168.0.15 /24</p>
 <p>domain: my.domain</p>
 <p>server: server</p>
@@ -434,7 +446,7 @@
 <p>DHCP</p>
 <p>DNS  </p>
 <hr />
-<h3 id="ubuntu-client-ver-1804-1810-194">Ubuntu client: (ver 18.04 / 18.10 / 19.4)</h3>
+<h3 id="ubuntu-client-ver-1804-1810-194">Ubuntu client: (ver 18.04 / 18.10 / 19.4)<a class="headerlink" href="#ubuntu-client-ver-1804-1810-194" title="Permanent link">Link</a></h3>
 <p><em>Open terminal, Install Required Packages.</em></p>
 <p>During the installation fill in your AD Domain information.</p>
 <p><strong><em>Most be in captial or this will fail.</em></strong></p>
@@ -452,7 +464,7 @@
 
 <p>Change adapter to enter virtual environment (No internet access from here).</p>
 <hr />
-<h3 id="realmd-configuration">Realmd configuration</h3>
+<h3 id="realmd-configuration">Realmd configuration<a class="headerlink" href="#realmd-configuration" title="Permanent link">Link</a></h3>
 <p>sudo realm join my.domain -U 'Administrator@MY.DOMAIN' -v</p>
 <p>Setting up realmd: (To discover and join windows domain)</p>
 <p>sudo nano /etc/realmd.conf</p>
@@ -474,7 +486,7 @@
 
 
 <hr />
-<h3 id="join-the-ubuntu-machine-on-the-ad-domain-kerberos">Join the Ubuntu machine on the AD domain: (Kerberos)</h3>
+<h3 id="join-the-ubuntu-machine-on-the-ad-domain-kerberos">Join the Ubuntu machine on the AD domain: (Kerberos)<a class="headerlink" href="#join-the-ubuntu-machine-on-the-ad-domain-kerberos" title="Permanent link">Link</a></h3>
 <div class="codehilite"><pre><span></span><code><span class="nv">sudo</span> <span class="nv">kinit</span> <span class="nv">Administrator</span>@<span class="nv">MY</span>.<span class="nv">DOMAIN</span>
  <span class="nv">Password</span> <span class="k">for</span> <span class="nv">Administrator</span>@<span class="nv">MY</span>.<span class="nv">DOMAIN</span>:
 
@@ -491,7 +503,7 @@
 
 
 <hr />
-<h3 id="final-check">Final Check:</h3>
+<h3 id="final-check">Final Check:<a class="headerlink" href="#final-check" title="Permanent link">Link</a></h3>
 <p>Restart the machine and try to login using the Ubuntu graphical login by domain user and password.</p>
 <p>my.domain\user</p>
 <hr />
@@ -568,7 +580,7 @@
     </div>
     
       <script src="../assets/javascripts/vendor.c51dfa35.min.js"></script>
-      <script src="../assets/javascripts/bundle.eaaa3931.min.js"></script><script id="__lang" type="application/json">{"search.config.lang": "en", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "clipboard.copy": "Copy to clipboard", "search.result.one": "1 matching document", "clipboard.copied": "Copied to clipboard", "search.result.none": "No matching documents", "search.config.separator": "[\\s\\-]+", "search.config.pipeline": "trimmer, stopWordFilter"}</script>
+      <script src="../assets/javascripts/bundle.eaaa3931.min.js"></script><script id="__lang" type="application/json">{"search.result.one": "1 matching document", "clipboard.copy": "Copy to clipboard", "search.config.separator": "[\\s\\-]+", "search.config.lang": "en", "search.result.none": "No matching documents", "search.result.placeholder": "Type to start searching", "search.result.other": "# matching documents", "search.config.pipeline": "trimmer, stopWordFilter", "clipboard.copied": "Copied to clipboard"}</script>
       
       <script>
         app = initialize({

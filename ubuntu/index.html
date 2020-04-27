@@ -450,11 +450,25 @@
                 
                   <h1>Ubuntu</h1>
                 
-                <h2 id="ubuntu-post-installation-configuration">Ubuntu Post Installation Configuration</h2>
+                <div class="toc">
+<ul>
+<li><a href="#ubuntu-post-installation-configuration">Ubuntu Post Installation Configuration</a><ul>
+<li><a href="#add-new-account">Add New Account.</a></li>
+<li><a href="#timezone-and-ntp">TimeZone and NTP</a></li>
+<li><a href="#server-update">Server Update</a></li>
+<li><a href="#setup-autoremove">Setup Autoremove</a></li>
+<li><a href="#upgrade-distribution">Upgrade distribution</a></li>
+<li><a href="#create-private-key-pair">Create Private Key Pair</a></li>
+<li><a href="#reboot-and-login-as-new-user">Reboot and login as new user.</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="ubuntu-post-installation-configuration">Ubuntu Post Installation Configuration<a class="headerlink" href="#ubuntu-post-installation-configuration" title="Permanent link">Link</a></h2>
 <hr />
 <p>After installation of Ubuntu, make the following changes as required.</p>
 <p>Most commands will require sudo acess, sudo -i before continuing.</p>
-<h3 id="add-new-account">Add New Account.</h3>
+<h3 id="add-new-account">Add New Account.<a class="headerlink" href="#add-new-account" title="Permanent link">Link</a></h3>
 <p>New account if don't to want use the one setup during installation of the operating system.</p>
 <div class="codehilite"><pre><span></span><code> adduser mjones
 
@@ -462,7 +476,7 @@
 </code></pre></div>
 
 
-<h3 id="timezone-and-ntp">TimeZone and NTP</h3>
+<h3 id="timezone-and-ntp">TimeZone and NTP<a class="headerlink" href="#timezone-and-ntp" title="Permanent link">Link</a></h3>
 <p>This will insure correct timezone for the system.</p>
 <div class="codehilite"><pre><span></span><code> dpkg-reconfigure tzdata
 
@@ -474,7 +488,7 @@
 </code></pre></div>
 
 
-<h3 id="server-update">Server Update</h3>
+<h3 id="server-update">Server Update<a class="headerlink" href="#server-update" title="Permanent link">Link</a></h3>
 <p>Only run individual or both together.</p>
 <div class="codehilite"><pre><span></span><code> apt update -y
 
@@ -486,7 +500,7 @@
 </code></pre></div>
 
 
-<h3 id="setup-autoremove">Setup Autoremove</h3>
+<h3 id="setup-autoremove">Setup Autoremove<a class="headerlink" href="#setup-autoremove" title="Permanent link">Link</a></h3>
 <p>This setup monthly clean up of the system.</p>
 <div class="codehilite"><pre><span></span><code> apt autoremove -y
 
@@ -496,7 +510,7 @@
 </code></pre></div>
 
 
-<h3 id="upgrade-distribution">Upgrade distribution</h3>
+<h3 id="upgrade-distribution">Upgrade distribution<a class="headerlink" href="#upgrade-distribution" title="Permanent link">Link</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 </div>
@@ -505,7 +519,7 @@
 </code></pre></div>
 
 
-<h3 id="create-private-key-pair">Create Private Key Pair</h3>
+<h3 id="create-private-key-pair">Create Private Key Pair<a class="headerlink" href="#create-private-key-pair" title="Permanent link">Link</a></h3>
 <p>Only create key if you have installed ssh-server or want to access another system remotley.</p>
 <div class="codehilite"><pre><span></span><code> ssh-keygen
 
@@ -513,7 +527,7 @@
 </code></pre></div>
 
 
-<h3 id="reboot-and-login-as-new-user">Reboot and login as new user.</h3>
+<h3 id="reboot-and-login-as-new-user">Reboot and login as new user.<a class="headerlink" href="#reboot-and-login-as-new-user" title="Permanent link">Link</a></h3>
 <div class="codehilite"><pre><span></span><code> sudo -i
 
 or 
@@ -589,7 +603,7 @@ or
     </div>
     
       <script src="../assets/javascripts/vendor.c51dfa35.min.js"></script>
-      <script src="../assets/javascripts/bundle.eaaa3931.min.js"></script><script id="__lang" type="application/json">{"search.config.lang": "en", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "clipboard.copy": "Copy to clipboard", "search.result.one": "1 matching document", "clipboard.copied": "Copied to clipboard", "search.result.none": "No matching documents", "search.config.separator": "[\\s\\-]+", "search.config.pipeline": "trimmer, stopWordFilter"}</script>
+      <script src="../assets/javascripts/bundle.eaaa3931.min.js"></script><script id="__lang" type="application/json">{"search.result.one": "1 matching document", "clipboard.copy": "Copy to clipboard", "search.config.separator": "[\\s\\-]+", "search.config.lang": "en", "search.result.none": "No matching documents", "search.result.placeholder": "Type to start searching", "search.result.other": "# matching documents", "search.config.pipeline": "trimmer, stopWordFilter", "clipboard.copied": "Copied to clipboard"}</script>
       
       <script>
         app = initialize({
